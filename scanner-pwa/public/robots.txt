@@ -1,0 +1,9 @@
+# Scanner PWA - Restricted Access
+# This is an internal application for event scanning
+
+User-agent: *
+Disallow: /
+
+# Reasoning: This is a private scanning application
+# for authorized personnel only (liaison officers at event gates).
+# It should NOT be indexed by search engines.

@@ -1,0 +1,117 @@
+===================================================================
+RUN THIS SQL TO UPDATE SEMINAR ATTENDEE PASSES
+===================================================================
+
+GENERATED: 76 UPDATE statements from "seminar attendees.csv"
+FILE: update_seminar_passes.sql
+
+WHAT THIS DOES:
+- Updates 76 seminar attendee entries with correct pass allocations
+- Sets exhibition_day1, exhibition_day2, interactive_sessions, plenary
+- Based on CSV data (Exhibition_Day_1, Exhibition_Day_2, Interactive_Sessions, Plenary columns)
+- Updates by Aadhaar number (id_number field)
+
+===================================================================
+STEP 1: GO TO SUPABASE SQL EDITOR
+===================================================================
+
+Open: https://supabase.com/dashboard/project/scvzcvpyvmwzigusdsjl/sql
+
+===================================================================
+STEP 2: COPY THE SQL FILE CONTENT
+===================================================================
+
+The SQL file is ready at: update_seminar_passes.sql
+
+You can either:
+- Open the file and copy all content (76 UPDATE statements)
+- Or paste this command in terminal to view:
+  cat update_seminar_passes.sql
+
+===================================================================
+STEP 3: PASTE IN SUPABASE SQL EDITOR
+===================================================================
+
+1. Paste the entire content of update_seminar_passes.sql
+2. Click "Run" button
+3. Wait for execution to complete
+
+===================================================================
+STEP 4: VERIFY THE UPDATES
+===================================================================
+
+Run this verification query in Supabase:
+
+-- Check how many entries were updated
+SELECT COUNT(*) as updated_count
+FROM entries
+WHERE id_number IN (
+  '750341453109', '346330470770', '529961647382',
+  -- (list continues with all 76 Aadhaar numbers from CSV)
+);
+
+Expected result: 76 rows
+
+-- Or check specific pass counts
+SELECT
+  COUNT(*) FILTER (WHERE exhibition_day1 = true) as ex1_count,
+  COUNT(*) FILTER (WHERE exhibition_day2 = true) as ex2_count,
+  COUNT(*) FILTER (WHERE interactive_sessions = true) as interactive_count,
+  COUNT(*) FILTER (WHERE plenary = true) as plenary_count
+FROM entries
+WHERE id_number IN (
+  '750341453109', '346330470770', '529961647382'
+  -- (add more Aadhaar numbers as needed)
+);
+
+===================================================================
+STEP 5: TEST BULK EMAIL FILTERS
+===================================================================
+
+1. Go to Streamlit app: https://swavlamban2025.streamlit.app
+2. Navigate to: My Entries → Bulk Email Mode
+3. UNCHECK "Exhibitor Passes" filter
+4. CHECK all other filters (Exhibition Day 1, Day 2, Interactive, Plenary)
+5. Click "Apply Filters"
+
+EXPECTED RESULT:
+- Should show 76 entries (the seminar attendees)
+- Should NOT show 103 exhibitor entries
+- Filter count should be accurate
+
+===================================================================
+STEP 6: SEND BULK EMAILS
+===================================================================
+
+Once filters show correct 76 entries:
+
+1. Click "Select All" checkbox
+2. Review selected entries
+3. Click "📧 Send Passes to Selected Attendees"
+4. Wait for progress bar to complete (76 emails)
+5. Verify success count: "✅ Successfully sent 76 passes"
+
+===================================================================
+TROUBLESHOOTING
+===================================================================
+
+IF UPDATES MATCH 0 ROWS:
+- The 76 entries don't exist in database yet
+- You need to upload the CSV first via "Bulk Upload Attendees"
+- Then run this SQL
+
+IF FILTER STILL SHOWS WRONG COUNT:
+- Clear browser cache and refresh
+- Logout and login again
+- Check if exhibitors still have exhibition_day1/day2 = true
+
+===================================================================
+IMPORTANT NOTES
+===================================================================
+
+✅ This SQL is SAFE - it only UPDATES existing entries, doesn't delete anything
+✅ The WHERE clause matches by Aadhaar number (unique identifier)
+✅ If an Aadhaar doesn't exist, that UPDATE will match 0 rows (no error)
+✅ Each UPDATE is independent, so partial success is possible
+
+===================================================================

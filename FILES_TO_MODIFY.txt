@@ -1,0 +1,195 @@
+═══════════════════════════════════════════════════════════════════════
+        SWAVLAMBAN 2025 - COMPLETE IMAGE FILES LIST (CORRECTED)
+═══════════════════════════════════════════════════════════════════════
+
+CRITICAL PRIORITY (6 files) - PASS TEMPLATES - MUST HAVE FIRST:
+───────────────────────────────────────────────────────────────────────
+
+1. logo.png
+   Size: 2000 x 1428 px
+   Change: "2024" → "2025"
+
+2. pass_exhibition_day1_25nov2025.png
+   Size: 1280 x 526 px | QR: 220 x 220 px
+   Based on: 28.png from 2024
+
+3. pass_exhibition_day2_26nov2025.png
+   Size: 1280 x 526 px | QR: 220 x 220 px
+   NEW file
+
+4. pass_panel1_26nov2025.png
+   Size: 2000 x 826 px | QR: 400 x 400 px
+   Based on: AM29.png from 2024
+   Topic: Future & Emerging Technologies
+
+5. pass_panel2_26nov2025.png
+   Size: 2000 x 826 px | QR: 400 x 400 px
+   NEW file
+   Topic: Boosting iDEX Ecosystem
+
+6. pass_plenary_26nov2025.png
+   Size: 2000 x 826 px | QR: 400 x 400 px
+   Based on: PM29.png from 2024
+
+═══════════════════════════════════════════════════════════════════════
+
+HIGH PRIORITY (11 files) - EMAIL ATTACHMENTS - IMPORTANT!
+───────────────────────────────────────────────────────────────────────
+
+DOS & DON'TS GUIDELINES (DND Files - 5 files):
+
+7. DND_exhibition_day1_25nov2025.png
+   Size: 2000 x 1428 px
+   Based on: DND-28.png from 2024
+   Content: Guidelines for Exhibition Day 1
+
+8. DND_exhibition_day2_26nov2025.png
+   Size: 2000 x 1428 px
+   NEW file
+   Content: Guidelines for Exhibition Day 2
+
+9. DND_panel1_26nov2025.png
+   Size: 2000 x 1428 px
+   Based on: DND-Forenoon.png from 2024
+   Content: Guidelines for Panel Discussion I
+
+10. DND_panel2_26nov2025.png
+    Size: 2000 x 1428 px
+    NEW file
+    Content: Guidelines for Panel Discussion II
+
+11. DND_plenary_26nov2025.png
+    Size: 2000 x 1428 px
+    Based on: DND-Plenary.png from 2024
+    Content: Guidelines for Plenary Session
+
+───────────────────────────────────────────────────────────────────────
+
+EVENT FLOW / PROGRAM DETAILS (EF Files - 6 files):
+
+12. EF_exhibition_day1_25nov2025.png
+    Size: 2000 x 1428 px
+    NEW file
+    Content: Day 1 Exhibition schedule (1100-1730, Industry interactions)
+
+13. EF_exhibition_day2_26nov2025.png
+    Size: 2000 x 1428 px
+    NEW file
+    Content: Day 2 Exhibition schedule (1000-1730)
+
+14. EF_panel1_26nov2025.png
+    Size: 2000 x 1428 px
+    Based on: EF-AM29.png from 2024
+    Content: Panel Discussion I program (1030-1130)
+    Topic: Future & Emerging Technologies
+
+15. EF_panel2_26nov2025.png
+    Size: 2000 x 1428 px
+    NEW file
+    Content: Panel Discussion II program (1200-1330)
+    Topic: Boosting iDEX Ecosystem
+
+16. EF_plenary_26nov2025.png
+    Size: 2000 x 1428 px
+    Based on: EF-PM29.png from 2024
+    Content: Plenary Session detailed program (1625-1755)
+    Include: CNS welcome, RM address, Book releases, VCNS thanks
+
+17. EF_complete_program_26nov2025.png
+    Size: 2000 x 1428 px
+    Based on: ep29_fore.png from 2024 (if applicable)
+    Content: Complete Day 2 schedule overview
+
+═══════════════════════════════════════════════════════════════════════
+
+TOTAL: 17 FILES (NOT 16!)
+───────────────────────────────────────────────────────────────────────
+Critical: 6 files (logo + 5 passes)
+High: 11 files (5 DND + 6 EF)
+
+═══════════════════════════════════════════════════════════════════════
+
+EMAIL ATTACHMENTS MAPPING:
+───────────────────────────────────────────────────────────────────────
+
+Email 1 - Exhibition Day 1:
+  - DND_exhibition_day1_25nov2025.png
+  - EF_exhibition_day1_25nov2025.png
+
+Email 2 - Exhibition Day 2:
+  - DND_exhibition_day2_26nov2025.png
+  - EF_exhibition_day2_26nov2025.png
+
+Email 3 - Panel Discussion I:
+  - DND_panel1_26nov2025.png
+  - EF_panel1_26nov2025.png
+
+Email 4 - Panel Discussion II:
+  - DND_panel2_26nov2025.png
+  - EF_panel2_26nov2025.png
+
+Email 5 - Plenary Session:
+  - DND_plenary_26nov2025.png
+  - EF_plenary_26nov2025.png
+  - Optional: EF_complete_program_26nov2025.png
+
+═══════════════════════════════════════════════════════════════════════
+
+QR CODE COLORS (For Pass Templates):
+───────────────────────────────────────────────────────────────────────
+Exhibition Day 1:       Brown (#8B4513) on Beige (#F5DEB3)
+Exhibition Day 2:       Navy Blue (#1D4E89) on Gray (#D3D3D3)
+Panel Discussion I:     Navy Blue (#1D4E89) on Gray (#D3D3D3)
+Panel Discussion II:    Green (#2E7D32) on Light Green (#C8E6C9)
+Plenary Session:        Brown (#8B4513) on White (#FFFFFF)
+
+═══════════════════════════════════════════════════════════════════════
+
+IMPORTANT NOTES:
+───────────────────────────────────────────────────────────────────────
+✓ ALL 17 files are needed (NOT optional)
+✓ DND & EF files are email attachments (sent with every pass)
+✓ Pass templates: QR area must be LEFT BLANK
+✓ QR position: 60px from left, vertically centered
+✓ All formats: PNG
+✓ Max file size: 2MB for passes, 3MB for DND/EF files
+✓ Update ALL dates: Oct 2024 → Nov 2025
+
+═══════════════════════════════════════════════════════════════════════
+
+CORRECTION FROM EARLIER DOCUMENTATION:
+───────────────────────────────────────────────────────────────────────
+WRONG: 16 files (6 + 7 + 3 optional venue maps)
+RIGHT: 17 files (6 pass templates + 5 DND + 6 EF)
+
+DND and EF files are NOT OPTIONAL - they're critical email attachments!
+
+═══════════════════════════════════════════════════════════════════════
+
+2024 REFERENCE FILES (in /tmp/swavlamban24/images/):
+───────────────────────────────────────────────────────────────────────
+logo.png              → Update year
+28.png                → Exhibition Day 1 template
+AM29.png              → Panel 1 template
+PM29.png              → Plenary template
+DND-28.png            → Exhibition Day 1 DND
+DND-Forenoon.png      → Panel 1 DND
+DND-Plenary.png       → Plenary DND
+EF-AM29.png           → Panel 1 Event Flow
+EF-PM29.png           → Plenary Event Flow
+ep29_fore.png         → Possible full Day 2 program
+
+═══════════════════════════════════════════════════════════════════════
+
+SEE DETAILED SPECS IN:
+───────────────────────────────────────────────────────────────────────
+- COMPLETE_IMAGE_LIST.md (full details with corrections)
+- IMAGE_SIZES_REFERENCE.md (exact measurements)
+- DESIGN_ASSETS_CHECKLIST.md (design guidelines)
+
+═══════════════════════════════════════════════════════════════════════
+
+MY APOLOGIES for missing the DND & EF files in earlier documentation!
+They ARE critical and needed for the email system to work properly.
+
+═══════════════════════════════════════════════════════════════════════

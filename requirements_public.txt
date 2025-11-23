@@ -1,0 +1,8 @@
+# Minimal requirements for Public Event Information Website (event_info_public.py)
+# This app does NOT require database, email, or authentication dependencies
+
+# Streamlit - Web framework
+streamlit>=1.29.0
+
+# That's it! The public app only displays static content and images.
+# No database, no email services, no authentication needed.

@@ -1,0 +1,67 @@
+# Python Version: 3.11
+# Swavlamban 2025 - Registration & Pass Management System
+# Streamlit Cloud Deployment - COMPLETE DEPENDENCIES
+
+# ============================================================================
+# STREAMLIT & WEB FRAMEWORK
+# ============================================================================
+streamlit==1.29.0
+
+# ============================================================================
+# DATABASE & ORM - REQUIRED FOR BACKEND
+# ============================================================================
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9  # PostgreSQL adapter (also works with SQLite)
+alembic==1.12.1  # Database migrations
+
+# ============================================================================
+# AUTHENTICATION & SECURITY - REQUIRED FOR BACKEND
+# ============================================================================
+PyJWT==2.8.0  # JWT tokens (simpler than python-jose)
+bcrypt==4.1.1  # Password hashing
+passlib==1.7.4  # Password utilities
+pydantic==2.5.0  # Data validation
+pydantic-settings==2.1.0  # Settings management
+
+# ============================================================================
+# EMAIL SERVICES
+# ============================================================================
+# Gmail SMTP (built-in, no extra package needed)
+mailjet-rest==1.3.4  # Official Mailjet API library (9x faster than SMTP)
+requests==2.31.0  # For MailBluster API and Gmail SMTP
+
+# ============================================================================
+# QR CODE GENERATION
+# ============================================================================
+qrcode[pil]==7.4.2  # QR code generation
+Pillow==10.1.0  # Image processing (compatible with Streamlit 1.29.0)
+
+# ============================================================================
+# DATA HANDLING & ANALYSIS
+# ============================================================================
+pandas==2.1.3  # Data manipulation
+numpy==1.26.2  # Numerical operations
+
+# ============================================================================
+# VISUALIZATION (Optional)
+# ============================================================================
+plotly==5.18.0  # Interactive charts
+matplotlib==3.8.2  # Static charts
+
+# ============================================================================
+# HTTP & API
+# ============================================================================
+httpx==0.25.2  # Async HTTP client
+python-multipart==0.0.6  # File uploads
+
+# ============================================================================
+# UTILITIES
+# ============================================================================
+python-dotenv==1.0.0  # Environment variables
+python-dateutil==2.8.2  # Date utilities
+pytz==2023.3  # Timezone support
+
+# ============================================================================
+# STREAMLIT EXTRAS (Optional UI enhancements)
+# ============================================================================
+streamlit-extras==0.3.6

@@ -1,0 +1,26 @@
+===================================================================
+RUN THIS SQL IN SUPABASE SQL EDITOR TO FIX EXISTING EXHIBITORS
+===================================================================
+
+1. Go to: https://supabase.com/dashboard/project/scvzcvpyvmwzigusdsjl/sql
+
+2. Paste this SQL and click "Run":
+
+UPDATE entries
+SET exhibition_day1 = false, exhibition_day2 = false, updated_at = NOW()
+WHERE is_exhibitor_pass = true
+  AND interactive_sessions = false
+  AND plenary = false;
+
+3. Verify the update (should show ~103 rows updated):
+
+SELECT COUNT(*) FROM entries WHERE is_exhibitor_pass = true;
+
+===================================================================
+
+This will:
+- Remove exhibition_day1 and exhibition_day2 flags from pure exhibitors
+- Keep exhibitors with Interactive/Plenary passes unchanged
+- Fix the filter issue immediately
+
+After running this SQL, refresh the Streamlit app and the filters will work correctly!

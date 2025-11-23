@@ -1,0 +1,4 @@
+Name,Email,Phone,ID_Type,ID_Number,Exhibition_Day_1,Exhibition_Day_2,Interactive_Sessions,Plenary
+John Doe,john@example.com,9876543210,Aadhaar,123456789012,Yes,Yes,No,No
+Jane Smith,jane@example.com,9876543211,PAN,234567890123,No,Yes,Yes,Yes
+Sample Name,email@example.com,9876543212,Passport,345678901234,Yes,No,Yes,No
