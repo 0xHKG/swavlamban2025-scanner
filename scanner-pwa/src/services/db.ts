@@ -1,4 +1,5 @@
-import Dexie, { Table } from 'dexie';
+import Dexie from 'dexie';
+import type { Table } from 'dexie';
 import type { Entry, PendingScan } from '@/types/entry.types';
 
 export class ScannerDB extends Dexie {
@@ -40,7 +41,7 @@ export class ScannerDB extends Dexie {
 
   // Get all unuploaded scans
   async getUnuploadedScans(): Promise<PendingScan[]> {
-    return await this.pending_scans.where('uploaded').equals(false).toArray();
+    return await this.pending_scans.where('uploaded').equals(0).toArray();
   }
 
   // Mark scans as uploaded
@@ -57,7 +58,7 @@ export class ScannerDB extends Dexie {
 
   // Get pending scans count
   async getPendingScansCount(): Promise<number> {
-    return await this.pending_scans.where('uploaded').equals(false).count();
+    return await this.pending_scans.where('uploaded').equals(0).count();
   }
 
   // Clear all pending scans (for testing)

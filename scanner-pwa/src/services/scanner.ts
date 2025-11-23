@@ -1,9 +1,9 @@
 import { db } from './db';
 import { parseQRData } from '@/utils/validation';
 import { GATE_CONFIG } from '@/config/gates';
-import { formatDate, getCurrentTime, getDeviceId, toISOString } from '@/utils/datetime';
+import { formatDate, getCurrentTime, getDeviceId } from '@/utils/datetime';
 import type { ScanRecord } from '@/types/scan.types';
-import { getStoredGateNumber, getStoredOperator } from './auth';
+import { getStoredOperator } from './auth';
 
 export async function validateScan(
   qrData: string,
@@ -34,7 +34,7 @@ export async function validateScan(
 
   // Check if pass type is allowed at this gate
   if (gate.allowedPasses && gate.allowedPasses.length > 0) {
-    if (!gate.allowedPasses.includes(parsed.pass_type)) {
+    if (!(gate.allowedPasses as readonly string[]).includes(parsed.pass_type)) {
       return createErrorResult('Wrong pass for this gate');
     }
   }

@@ -68,9 +68,8 @@ export function QRScanner() {
     startScanning();
 
     return () => {
-      if (codeReader) {
-        codeReader.reset();
-      }
+      // BrowserMultiFormatReader doesn't have reset(), cleanup handled automatically
+      codeReader = null;
     };
   }, [gateNumber, lastScan, addScan]);
 
