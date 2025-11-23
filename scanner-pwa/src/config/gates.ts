@@ -34,8 +34,10 @@ export const GATE_CONFIG = {
   'Main Entrance': {
     name: 'Main Entrance',
     location: 'Manekshaw Centre',
-    tier: 1,
-    allowedPasses: [] // All passes (date-specific)
+    date: null,
+    time: null,
+    allowedPasses: [], // All passes (date-specific)
+    sessionType: null
   }
 } as const;
 
