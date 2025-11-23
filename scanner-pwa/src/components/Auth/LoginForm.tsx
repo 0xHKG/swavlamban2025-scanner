@@ -27,52 +27,60 @@ export function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-2xl p-8 w-full max-w-md">
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            🎫 Swavlamban 2025
+    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6" style={{ background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%)' }}>
+      <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-md border border-gray-200">
+        <div className="text-center mb-8">
+          <div className="flex justify-center mb-4">
+            <span className="text-5xl">🇮🇳</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#1a365d' }}>
+            Swavlamban 2025
           </h1>
-          <h2 className="text-lg text-gray-600">Scanner Login</h2>
+          <h2 className="text-base sm:text-lg" style={{ color: '#4a5568' }}>Scanner Login</h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium mb-2" style={{ color: '#4a5568' }}>
               Username
             </label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 rounded-lg text-base"
+              style={{ border: '1px solid #cbd5e0', outline: 'none', fontSize: '16px' }}
               placeholder="Enter username"
               required
+              autoComplete="username"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium mb-2" style={{ color: '#4a5568' }}>
               Password
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 rounded-lg text-base"
+              style={{ border: '1px solid #cbd5e0', outline: 'none', fontSize: '16px' }}
               placeholder="Enter password"
               required
+              autoComplete="current-password"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium mb-2" style={{ color: '#4a5568' }}>
               Gate Number
             </label>
             <select
               value={gateNumber}
               onChange={(e) => setGateNumber(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 rounded-lg text-base"
+              style={{ border: '1px solid #cbd5e0', outline: 'none', fontSize: '16px' }}
               required
             >
               <option value="">Select Gate</option>
@@ -93,13 +101,14 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full text-white py-4 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-lg mt-2"
+            style={{ backgroundColor: loading ? '#4a5568' : '#1a365d', minHeight: '56px' }}
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
 
-        <div className="mt-6 text-center text-sm text-gray-500">
+        <div className="mt-6 text-center text-sm" style={{ color: '#718096' }}>
           <p>🔒 Secure scanner access</p>
           <p className="mt-1">Indian Navy • TDAC</p>
         </div>
