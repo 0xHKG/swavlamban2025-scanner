@@ -3,7 +3,7 @@ export const GATE_CONFIG = {
     name: 'Gate 1 - Exhibition Day 1',
     location: 'Exhibition Hall',
     date: '2025-11-25',
-    time: '0700-1730',
+    time: '0001-1730',
     allowedPasses: ['exhibition_day1', 'exhibitor_pass'],
     sessionType: 'exhibition_day1'
   },
