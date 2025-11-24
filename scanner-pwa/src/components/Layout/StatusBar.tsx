@@ -1,7 +1,7 @@
 import { useSyncStore } from '@/stores/syncStore';
 
 export function StatusBar() {
-  const { isOnline, lastSync, pendingCount } = useSyncStore();
+  const { isOnline, lastSync, pendingCount, totalEntries } = useSyncStore();
 
   return (
     <div className={`px-4 py-2 text-sm font-medium ${
@@ -13,6 +13,11 @@ export function StatusBar() {
           <span>
             {isOnline ? 'Connected' : 'Offline Mode'}
           </span>
+          {totalEntries > 0 && (
+            <span className="ml-2 bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs font-semibold">
+              📋 {totalEntries} entries
+            </span>
+          )}
         </div>
 
         <div className="flex items-center gap-4">

@@ -5,10 +5,12 @@ interface SyncState {
   isSyncing: boolean;
   lastSync: Date | null;
   pendingCount: number;
+  totalEntries: number;
   setOnline: (online: boolean) => void;
   setSyncing: (syncing: boolean) => void;
   setLastSync: (date: Date) => void;
   setPendingCount: (count: number) => void;
+  setTotalEntries: (count: number) => void;
 }
 
 export const useSyncStore = create<SyncState>((set) => ({
@@ -16,6 +18,7 @@ export const useSyncStore = create<SyncState>((set) => ({
   isSyncing: false,
   lastSync: null,
   pendingCount: 0,
+  totalEntries: 0,
 
   setOnline: (online) => set({ isOnline: online }),
 
@@ -23,5 +26,7 @@ export const useSyncStore = create<SyncState>((set) => ({
 
   setLastSync: (date) => set({ lastSync: date }),
 
-  setPendingCount: (count) => set({ pendingCount: count })
+  setPendingCount: (count) => set({ pendingCount: count }),
+
+  setTotalEntries: (count) => set({ totalEntries: count })
 }));

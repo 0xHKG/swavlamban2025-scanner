@@ -2,14 +2,16 @@ export interface Entry {
   entry_id: number;
   name: string;
   organization: string;
-  mobile: string;
+  phone: string;
+  email: string;
+  id_type: string;
+  id_number: string;
   qr_signature: string;
-  passes: {
-    exhibition_day1: boolean;
-    exhibition_day2: boolean;
-    interactive_sessions: boolean;
-    plenary: boolean;
-  };
+  exhibition_day1: boolean;
+  exhibition_day2: boolean;
+  interactive_sessions: boolean;
+  plenary: boolean;
+  is_exhibitor: boolean;
 }
 
 export interface PendingScan {

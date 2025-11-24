@@ -16,7 +16,7 @@ function App() {
   const token = useAuthStore(state => state.token);
   const gateNumber = useAuthStore(state => state.gateNumber);
   const recentScans = useScanStore(state => state.recentScans);
-  const { setOnline, setSyncing, setLastSync, setPendingCount } = useSyncStore();
+  const { setOnline, setSyncing, setLastSync, setPendingCount, setTotalEntries } = useSyncStore();
 
   // Get latest scan for display
   const latestScan = recentScans.length > 0 ? recentScans[0] : null;
@@ -42,6 +42,7 @@ function App() {
       const loadEntries = async () => {
         try {
           const count = await downloadEntries(gateNumber);
+          setTotalEntries(count);
           console.log(`Downloaded ${count} entries for ${gateNumber}`);
         } catch (error) {
           console.error('Failed to download entries:', error);
@@ -50,7 +51,7 @@ function App() {
 
       loadEntries();
     }
-  }, [token, gateNumber]);
+  }, [token, gateNumber, setTotalEntries]);
 
   // Background sync every 5 minutes
   useEffect(() => {
@@ -77,14 +78,15 @@ function App() {
     return () => clearInterval(syncInterval);
   }, [token, setSyncing, setLastSync, setPendingCount]);
 
-  // Update pending count on mount and after each scan
+  // Update pending count and total entries on mount and after each scan
   useEffect(() => {
     if (token) {
       getSyncStats().then(stats => {
         setPendingCount(stats.pendingScans);
+        setTotalEntries(stats.totalEntries);
       });
     }
-  }, [token, recentScans.length, setPendingCount]);
+  }, [token, recentScans.length, setPendingCount, setTotalEntries]);
 
   // Show login if not authenticated
   if (!token || !gateNumber) {

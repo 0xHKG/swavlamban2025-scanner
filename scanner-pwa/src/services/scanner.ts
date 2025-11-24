@@ -69,8 +69,8 @@ export async function validateScan(
         return createErrorResult('Pass not valid for Day 2 (26 Nov)');
       }
     } else {
-      // Not an event day - for testing, allow all passes
-      // In production, could return error
+      // Not an event day - reject entry
+      return createErrorResult('Event dates: 25-26 Nov 2025');
     }
 
     // Check for duplicate scan at Main Entrance on same day
