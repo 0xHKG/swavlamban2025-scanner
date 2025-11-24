@@ -3,7 +3,7 @@ export const GATE_CONFIG = {
     name: 'Gate 1 - Exhibition Day 1',
     location: 'Exhibition Hall',
     date: '2025-11-25',
-    time: null as string | null,
+    time: '0001-2359',
     allowedPasses: ['exhibition_day1', 'plenary', 'exhibitor_pass'],
     sessionType: 'exhibition_day1'
   },
@@ -11,7 +11,7 @@ export const GATE_CONFIG = {
     name: 'Gate 2 - Exhibition Day 2',
     location: 'Exhibition Hall',
     date: '2025-11-26',
-    time: null as string | null,
+    time: '0001-2359',
     allowedPasses: ['exhibition_day2', 'interactive_sessions', 'plenary', 'exhibitor_pass'],
     sessionType: 'exhibition_day2'
   },
@@ -19,7 +19,7 @@ export const GATE_CONFIG = {
     name: 'Gate 3 - Interactive Sessions',
     location: 'Zorawar Hall',
     date: '2025-11-26',
-    time: null as string | null,
+    time: '0001-2359',
     allowedPasses: ['interactive_sessions'],
     sessionType: 'interactive_sessions'
   },
@@ -27,7 +27,7 @@ export const GATE_CONFIG = {
     name: 'Gate 4 - Plenary Session',
     location: 'Zorawar Hall',
     date: '2025-11-26',
-    time: null as string | null,
+    time: '0001-2359',
     allowedPasses: ['plenary'],
     sessionType: 'plenary'
   },
@@ -35,7 +35,7 @@ export const GATE_CONFIG = {
     name: 'Main Entrance',
     location: 'Manekshaw Centre',
     date: null,
-    time: null as string | null,
+    time: null,
     allowedPasses: [], // All passes (date-specific)
     sessionType: null
   }
