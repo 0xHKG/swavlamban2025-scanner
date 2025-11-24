@@ -16,13 +16,21 @@ export async function validateScan(
   }
 
   // Find entry in offline database
-  const entry = await db.getEntryById(parsed.entry_id);
+  let entry;
+  if (parsed.entry_id === 0) {
+    // New format: look up by ID number (signature)
+    entry = await db.getEntryBySignature(parsed.signature);
+  } else {
+    // Old format: look up by entry ID
+    entry = await db.getEntryById(parsed.entry_id);
+  }
+
   if (!entry) {
     return createErrorResult('Entry not found');
   }
 
-  // Verify signature
-  if (entry.qr_signature !== parsed.signature) {
+  // Verify signature (skip for new format since we already matched by it)
+  if (parsed.entry_id !== 0 && entry.qr_signature !== parsed.signature) {
     return createErrorResult('Invalid QR signature');
   }
 
