@@ -28,7 +28,7 @@ export function LoginForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 sm:p-6" style={{ background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%)' }}>
-      <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-md border border-gray-200">
+      <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-sm border border-gray-200">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
             <span className="text-5xl">🇮🇳</span>
