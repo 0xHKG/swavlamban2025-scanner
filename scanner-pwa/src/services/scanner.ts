@@ -47,12 +47,43 @@ export async function validateScan(
     }
   }
 
-  // Check date (simplified - if gate has date restriction)
-  if (gate.date) {
-    const now = new Date();
-    const currentDate = formatDate(now);
-    const currentTime = getCurrentTime();
+  // Get current date/time
+  const now = new Date();
+  const currentDate = formatDate(now);
+  const currentTime = getCurrentTime();
 
+  // Main Entrance: date-based pass validation
+  if (gateNumber === 'Main Entrance') {
+    // Define which passes are valid on which day
+    const day1Passes = ['exhibition_day1', 'plenary', 'exhibition_both_days', 'exhibitor_pass'];
+    const day2Passes = ['exhibition_day2', 'interactive_sessions', 'exhibition_both_days', 'exhibitor_pass'];
+
+    if (currentDate === '2025-11-25') {
+      // Day 1: Only exhibition_day1, plenary, and exhibitor passes valid
+      if (!day1Passes.includes(parsed.pass_type)) {
+        return createErrorResult('Pass not valid for Day 1 (25 Nov)');
+      }
+    } else if (currentDate === '2025-11-26') {
+      // Day 2: Only exhibition_day2, interactive, and exhibitor passes valid
+      if (!day2Passes.includes(parsed.pass_type)) {
+        return createErrorResult('Pass not valid for Day 2 (26 Nov)');
+      }
+    } else {
+      // Not an event day - for testing, allow all passes
+      // In production, could return error
+    }
+
+    // Check for duplicate scan at Main Entrance on same day
+    const existingScan = await db.checkDuplicateScan(
+      entry.entry_id,
+      gateNumber,
+      currentDate
+    );
+    if (existingScan) {
+      return createErrorResult('Already checked in today');
+    }
+  } else if (gate.date) {
+    // Other gates: Check date restriction
     if (currentDate !== gate.date) {
       return createErrorResult('Wrong date for this pass');
     }
@@ -67,7 +98,6 @@ export async function validateScan(
   }
 
   // Record scan in pending queue
-  const now = new Date();
   const operator = getStoredOperator() || 'unknown';
 
   await db.addPendingScan({

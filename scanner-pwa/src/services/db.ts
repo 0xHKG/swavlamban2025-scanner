@@ -65,6 +65,27 @@ export class ScannerDB extends Dexie {
   async clearPendingScans(): Promise<void> {
     await this.pending_scans.clear();
   }
+
+  // Check for duplicate scan at a gate on a specific date
+  async checkDuplicateScan(
+    entryId: number,
+    gateNumber: string,
+    date: string
+  ): Promise<boolean> {
+    const scans = await this.pending_scans
+      .where('entry_id')
+      .equals(entryId)
+      .toArray();
+
+    // Check if any scan matches the gate and date
+    return scans.some(scan => {
+      if (scan.gate_number !== gateNumber) return false;
+      const scanDate = scan.check_in_time instanceof Date
+        ? scan.check_in_time.toISOString().split('T')[0]
+        : new Date(scan.check_in_time).toISOString().split('T')[0];
+      return scanDate === date;
+    });
+  }
 }
 
 export const db = new ScannerDB();
