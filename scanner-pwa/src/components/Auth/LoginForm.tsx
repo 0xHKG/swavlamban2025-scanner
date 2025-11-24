@@ -39,16 +39,16 @@ export function LoginForm() {
           <h2 className="text-base sm:text-lg" style={{ color: '#4a5568' }}>Scanner Login</h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-2" style={{ color: '#4a5568' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: '#4a5568' }}>
               Username
             </label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-4 rounded-lg text-base"
+              className="w-full px-3 py-3 rounded-lg text-base"
               style={{ border: '1px solid #cbd5e0', outline: 'none', fontSize: '16px' }}
               placeholder="Enter username"
               required
@@ -57,14 +57,14 @@ export function LoginForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2" style={{ color: '#4a5568' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: '#4a5568' }}>
               Password
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-4 rounded-lg text-base"
+              className="w-full px-3 py-3 rounded-lg text-base"
               style={{ border: '1px solid #cbd5e0', outline: 'none', fontSize: '16px' }}
               placeholder="Enter password"
               required
@@ -73,13 +73,13 @@ export function LoginForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2" style={{ color: '#4a5568' }}>
+            <label className="block text-sm font-medium mb-1" style={{ color: '#4a5568' }}>
               Gate Number
             </label>
             <select
               value={gateNumber}
               onChange={(e) => setGateNumber(e.target.value)}
-              className="w-full px-4 py-4 rounded-lg text-base"
+              className="w-full px-3 py-3 rounded-lg text-base"
               style={{ border: '1px solid #cbd5e0', outline: 'none', fontSize: '16px' }}
               required
             >
@@ -101,8 +101,8 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full text-white py-4 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-lg mt-2"
-            style={{ backgroundColor: loading ? '#4a5568' : '#1a365d', minHeight: '56px' }}
+            className="w-full text-white py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-base mt-2"
+            style={{ backgroundColor: loading ? '#4a5568' : '#1a365d', minHeight: '48px' }}
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
